@@ -1,0 +1,19 @@
+.header-container {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    background: rgb(94, 151, 153);
+    margin-bottom: 10px;
+    border-top: 1px solid black;
+    border-bottom: 3px double black;
+    border-right: 3px double black;
+    border-left: 3px double black;
+}
+
+
+button {
+    margin: 10px 10px;
+    padding: 5px;
+    height: 30px;
+    text-align: center;
+}

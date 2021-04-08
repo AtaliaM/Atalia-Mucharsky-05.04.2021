@@ -1,17 +1,22 @@
 import React from 'react';
-import InputField from './InputField';
-import SelectedCityWeather from './SelectedCityWeather';
+import { BrowserRouter, Route } from 'react-router-dom';
+import MainScreen from './MainScreen';
 import '../style/App.css';
+import Header from './Header';
+import DisplayFavorites from './DisplayFavorites';
 
 const App = () => {
 
     return (
         <div className="AppContainer">
-            <InputField />
-            <div className="ui container grid">
-                <SelectedCityWeather />
+            <BrowserRouter>
+                {/* <div> */}
+                    <Header />
+                    <Route path="/" exact component={MainScreen} />
+                    <Route path="/favorites" component={DisplayFavorites} />
 
-            </div>
+                {/* </div> */}
+            </BrowserRouter>
         </div>
     )
 }

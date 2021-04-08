@@ -1,0 +1,35 @@
+.day {
+    width: 100%;
+    height: fit-content;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+label {
+    margin: 0 5px;
+}
+
+.today-container {
+    display: flex;
+    justify-content: center;
+}
+
+.today {
+    width: 50%;
+
+}
+
+.favorite-container {
+    display: flex;
+    justify-content: center;
+}
+
+.favorite {
+    text-align: center;
+}

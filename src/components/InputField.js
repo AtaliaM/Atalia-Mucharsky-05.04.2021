@@ -4,7 +4,8 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { selectCity } from '../actions';
 
-const APIKEY = "CicQVGfqVfoy6AJBEauazxIatO1s3YCD";
+const APIKEY = "xbaBtkO0fpEDW7yX5eyCDLaFTThffoab";
+// "CicQVGfqVfoy6AJBEauazxIatO1s3YCD";
 
 const InputField = (props) => {
 
@@ -54,7 +55,10 @@ const InputField = (props) => {
             city.name === debouncedTerm
         );
         console.log(city);
-        props.selectCity(city[0])
+        if (city.length !== 0) {
+            props.selectCity(city[0])
+
+        }
     }
 
 

@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const initialState = { name: "Tel Aviv", key: "215854", currentWeather: undefined, weeklyWeather: undefined };
+const initialState = { name: "Tel Aviv", key: "215854"};
 
 const selectedCityWeatherReducer = (state = initialState, action) => {
     if (action.type === 'SELECT_CITY') {
