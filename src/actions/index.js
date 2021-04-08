@@ -2,8 +2,17 @@ export const selectCity = (city) => { //exported with named export
     //return an action
     return {
         type: 'SELECT_CITY',
+        payload: city
+    }
+
+}
+export const selectFavoriteCity = (name, key) => { //exported with named export
+    //return an action
+    return {
+        type: 'SELECT_FAVORITE_CITY',
         payload: {
-            city: city,
+            name: name,
+            key: key
           }
     }
 

@@ -1,0 +1,10 @@
+#root {
+    height: 100%;
+  }
+
+  .AppContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
