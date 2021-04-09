@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import myLocalStorage from '../LocalStorage';
+import { connect } from 'react-redux';
+import {selectFavoriteCity} from '../actions';
 
 const APIKEY = "xbaBtkO0fpEDW7yX5eyCDLaFTThffoab";
 // "CicQVGfqVfoy6AJBEauazxIatO1s3YCD";
 
 const DisplayFavorites = (props) => {
+
+    console.log(props);
 
     const [favorites, setFavorites] = useState([]);
     const citiesWeather = [];
@@ -20,7 +24,7 @@ const DisplayFavorites = (props) => {
         for (let i=0; i <favorites.length; i++) {
             let res = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${favorites[i].key}?apikey=${APIKEY}`);
             citiesWeather.push(res.data[i]);
-            console.log(favorites[i])
+            console.log(citiesWeather)
         }
     }
 
@@ -50,4 +54,12 @@ const DisplayFavorites = (props) => {
     )
 }
 
-export default DisplayFavorites;
+
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return { addFavoriteCity: state.addFavoriteCity }
+}
+
+export default connect(mapStateToProps, {
+    selectFavoriteCity: selectFavoriteCity
+})(DisplayFavorites);

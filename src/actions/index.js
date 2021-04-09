@@ -6,14 +6,19 @@ export const selectCity = (city) => { //exported with named export
     }
 
 }
-export const selectFavoriteCity = (name, key) => { //exported with named export
+export const selectFavoriteCity = (city) => { //exported with named export
     //return an action
     return {
-        type: 'SELECT_FAVORITE_CITY',
-        payload: {
-            name: name,
-            key: key
-          }
+        type: 'ADD_FAVORITE_CITY',
+        payload: city
+    }
+
+}
+export const removeFavoriteCity = (city) => { //exported with named export
+    //return an action
+    return {
+        type: 'REMOVE_FAVORITE_CITY',
+        payload: city
     }
 
 }

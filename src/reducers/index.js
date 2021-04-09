@@ -12,8 +12,8 @@ const selectedCityWeatherReducer = (state = initialState, action) => {
     return state;
 }
 
-const favoriteCitiesReducer = (oldFavoriteCitiesList = [], action) => {
-    if (action.type === 'SELECT_FAVORITE_CITY') {
+const addFavoriteCityReducer = (oldFavoriteCitiesList = [], action) => {
+    if (action.type === 'ADD_FAVORITE_CITY') {
         return (
             [...oldFavoriteCitiesList, action.payload]
         )
@@ -21,9 +21,20 @@ const favoriteCitiesReducer = (oldFavoriteCitiesList = [], action) => {
     return oldFavoriteCitiesList;
 }
 
+const removeFavoriteCityReducer = (oldFavoriteCitiesList = [], action) => {
+    if (action.type === 'REMOVE_FAVORITE_CITY') {
+        return (
+            oldFavoriteCitiesList.filter(name => name !== action.payload.name)
+        )
+    }
+    return oldFavoriteCitiesList;
+}
+
 export default combineReducers({
     selectedCityWeather: selectedCityWeatherReducer,
-    favoriteCities: favoriteCitiesReducer
+    addFavoriteCity: addFavoriteCityReducer,
+    removeFavoriteCity: removeFavoriteCityReducer
+
 })
 
 
