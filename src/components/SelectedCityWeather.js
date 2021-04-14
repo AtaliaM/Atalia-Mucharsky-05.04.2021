@@ -51,6 +51,13 @@ const SelectedCityWeather = (props) => {
         }
     }
 
+    const getDay = (date) => {
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const d = new Date(date.slice(0,10));
+        const dayName = days[d.getDay()];
+        return <h3>{dayName}</h3>
+    }
+
     return (
         <div className="ui five column grid">
             {weeklyWeather ?
@@ -61,35 +68,35 @@ const SelectedCityWeather = (props) => {
                     <h2>{`This week's weather at ${props.selectedCityWeather.name}`}</h2>
                     <div className="column">
                         <div className="day ui segment">
-                            <h2>Temp</h2>
+                        {getDay(weeklyWeather.DailyForecasts[0].Date)}
                             <h3>{Math.floor((weeklyWeather.DailyForecasts[0].Temperature.Maximum.Value - 32) * 5 / 9)}°C</h3>
                         </div>
                     </div>
 
                     <div className="column">
                         <div className="day ui segment">
-                            <h2>Temp</h2>
+                            {getDay(weeklyWeather.DailyForecasts[1].Date)}
                             <h3>{Math.floor((weeklyWeather.DailyForecasts[1].Temperature.Maximum.Value - 32) * 5 / 9)}°C</h3>
                         </div>
                     </div>
 
                     <div className="column">
                         <div className="day ui segment">
-                            <h2>Temp</h2>
+                        {getDay(weeklyWeather.DailyForecasts[2].Date)}
                             <h3>{Math.floor((weeklyWeather.DailyForecasts[2].Temperature.Maximum.Value - 32) * 5 / 9)}°C</h3>
                         </div>
                     </div>
 
                     <div className="column">
                         <div className="day ui segment">
-                            <h2>Temp</h2>
+                        {getDay(weeklyWeather.DailyForecasts[3].Date)}
                             <h3>{Math.floor((weeklyWeather.DailyForecasts[3].Temperature.Maximum.Value - 32) * 5 / 9)}°C</h3>
                         </div>
                     </div>
 
                     <div className="column">
                         <div className="day ui segment">
-                            <h2>Temp</h2>
+                        {getDay(weeklyWeather.DailyForecasts[4].Date)}
                             <h3>{Math.floor((weeklyWeather.DailyForecasts[4].Temperature.Maximum.Value - 32) * 5 / 9)}°C</h3>
                         </div>
                     </div>
@@ -100,7 +107,7 @@ const SelectedCityWeather = (props) => {
                     <h2>Today's weather:</h2>
                     <div className="today-container">
                         <div className="day ui segment today">
-                            <h2>Temp</h2>
+                            <h3>Temp</h3>
                             <h3>{currentWeather[0].Temperature.Metric.Value}°C</h3>
                         </div>
                     </div>
